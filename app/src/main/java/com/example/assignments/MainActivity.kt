@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignments.adapter.ItemAdapter
 import com.example.assignments.model.assignment
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 
 class MainActivity : AppCompatActivity() {

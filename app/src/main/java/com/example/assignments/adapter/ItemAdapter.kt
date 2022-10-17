@@ -1,11 +1,14 @@
 package com.example.assignments.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.list_item.view.*
+
 
 import com.example.assignments.R
 import com.example.assignments.model.assignment
@@ -15,10 +18,8 @@ class ItemAdapter(
 
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val itemText = itemView.findViewById<TextView>(R.id.editText)
-        val check = itemView.findViewById<CheckBox>(R.id.check)
     }
 
 
@@ -48,12 +49,10 @@ class ItemAdapter(
         override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
 
             val x = assignments[position]
-            val TextView = holder.itemText
-            val CheckBox = holder.check
             holder.itemView.apply {
-                TextView.text = x.title
-                CheckBox.isChecked = x.ischecked
-                CheckBox.setOnCheckedChangeListener { _, ischecked ->
+                itemText.text = x.title
+                check.isChecked = x.ischecked
+                check.setOnCheckedChangeListener { _, ischecked ->
                     x.ischecked = !x.ischecked
                 }
 
